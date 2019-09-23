@@ -5,3 +5,5 @@ CONVERT IP ADDRESS and modify $px variable:
 printf '%X,%X,%X,%X' 172.16.217.130
 
 SELECT PORT modifying $p variable: Default --> ($p, 443)
+ADDITIONAL DETAILS HERE:
+https://0xdarkvortex.dev/index.php/2019/07/17/red-team-ttps-part-1-amsi-evasion/
