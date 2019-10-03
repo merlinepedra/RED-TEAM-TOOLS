@@ -6,6 +6,8 @@ function Get-BrowserInformation {
         and/or Firefox browsers on Windows machines.
         Original Scritp:
         https://github.com/EmpireProject/Empire/blob/master/data/module_source/collection/Get-BrowserData.ps1
+        OR
+        https://github.com/rvrsh3ll/Misc-Powershell-Scripts/blob/master/Get-BrowserData.ps1
 
     .PARAMETER Browser
 
