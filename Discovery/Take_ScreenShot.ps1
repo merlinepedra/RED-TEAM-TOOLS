@@ -3,8 +3,7 @@ Function Take-ScreenShot {
 .SYNOPSIS   
     Used to take a screenshot of the desktop or the active window.
     iex(https://raw.githubusercontent.com/BankSecurity/Red_Team/master/Discovery/Take_ScreenShot.ps1);Take-ScreenShot -screen -file "C:\image.png" -imagetype png
-.DESCRIPTION   
-    Used to take a screenshot of the desktop or the active window and save to an image file if needed. 
+ 
 .PARAMETER screen 
     Screenshot of the entire screen 
 .PARAMETER activewindow 
@@ -15,12 +14,7 @@ Function Take-ScreenShot {
     Type of image being saved. Can use JPEG,BMP,PNG. Default is bitmap(bmp)   
 .PARAMETER print 
     Sends the screenshot directly to your default printer       
-.INPUTS 
-.OUTPUTS     
-.NOTES   
-    Name: Take-ScreenShot 
-    Author: Boe Prox 
-    DateCreated: 07/25/2010      
+
 .EXAMPLE   
     Take-ScreenShot -activewindow 
     Takes a screen shot of the active window         
