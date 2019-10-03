@@ -4,6 +4,8 @@ function Get-BrowserInformation {
         Usage: iex (iwr https://raw.githubusercontent.com/BankSecurity/Red_Team/master/Discovery/Get_Browsers_History_Bookmarks.ps1);Get-BrowserInformation
         Enumerates browser history or bookmarks for a Chrome, Internet Explorer,
         and/or Firefox browsers on Windows machines.
+        Original Scritp:
+        https://github.com/EmpireProject/Empire/blob/master/data/module_source/collection/Get-BrowserData.ps1
 
     .PARAMETER Browser
 
