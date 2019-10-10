@@ -28,3 +28,6 @@ route print
 netsh advfirewall show allprofiles
 
 findstr /si password C:\Users\*.bat, C:\Users\*.vbs, C:\Windows\Temp\*.vbs, C:\Windows\Temp\*.bat, C:\Windows\Temp\*.ini, C:\Users\*.ini, C:\Users\*.xml
+findstr /si pwd= *.xml *.ini *.txt
+findstr /si password= *.xml *.ini *.txt
+findstr /si pass= *.xml *.ini *.txt
