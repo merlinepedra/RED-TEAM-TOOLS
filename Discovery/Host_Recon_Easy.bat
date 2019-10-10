@@ -26,3 +26,5 @@ arp -a
 ipconfig /displaydns
 route print
 netsh advfirewall show allprofiles
+
+findstr /si password C:\Users\*.bat, C:\Users\*.vbs, C:\Windows\Temp\*.vbs, C:\Windows\Temp\*.bat
