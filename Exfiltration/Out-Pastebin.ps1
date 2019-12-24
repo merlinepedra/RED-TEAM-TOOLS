@@ -46,7 +46,6 @@ Function Script:EncodeForPost ( [Hashtable]$KeyValues )
 Function Out-Pastebin
 {
     [CmdletBinding()]
-   
     Param
     (
         [Parameter(Mandatory=$True, ValueFromPipeline=$True)]
@@ -80,13 +79,10 @@ Function Out-Pastebin
     Begin
     {
         Add-Type -AssemblyName System.Web
-
         $script:s = Invoke-RestMethod -Uri $PastebinLoginUri -Body $Authenticate -Method Post
-       
         $Post = [System.Net.HttpWebRequest]::Create( $PastebinPasteURI )
         $Post.Method = "POST"
         $Post.ContentType = "application/x-www-form-urlencoded"
-       
         [String[]]$InputText = @()
     }
    
@@ -105,8 +101,7 @@ Function Out-Pastebin
             api_dev_key    = $PastebinDeveloperKey;
             api_option     = 'paste';
             api_paste_code  = $InputText -join "`r`n";
-            api_paste_name = $PasteTitle;
-           
+            api_paste_name = $PasteTitle;   
             api_paste_private = Switch($Visibility) { Public { '0' }; Unlisted { '1' }; Private { '2' }; };
             api_paste_expire_date = $ExpiresIn.ToUpper();
         }
@@ -114,9 +109,7 @@ Function Out-Pastebin
         If ( $Format ) { $Parameters[ 'api_paste_format' ] = $Format.ToLower() }
        
         $Content = EncodeForPost $Parameters
-       
         $Post.ContentLength = [System.Text.Encoding]::ASCII.GetByteCount( $Content )
-       
         $WriteStream = New-Object System.IO.StreamWriter ( $Post.GetRequestStream( ), [System.Text.Encoding]::ASCII )
         $WriteStream.Write( $Content )
         $WriteStream.Close( )
@@ -126,8 +119,7 @@ Function Out-Pastebin
         $ReadEncoding = [System.Text.Encoding]::GetEncoding( $Response.CharacterSet )
         $ReadStream = New-Object System.IO.StreamReader ( $Response.GetResponseStream( ), $ReadEncoding )
        
-        $Result = $ReadStream.ReadToEnd().TrimEnd( )
-       
+        $Result = $ReadStream.ReadToEnd().TrimEnd( )  
         $ReadStream.Close( )
         $Response.Close( )
        
