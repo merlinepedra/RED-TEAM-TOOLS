@@ -1,6 +1,7 @@
 <# 
 .SYNOPSIS
-    Authenticates to PasteBin.com, and uploads text data directly to the website
+    Authenticates to PasteBin.com, and uploads text data directly to the website.
+    Original Script: https://pastebin.com/znW8mkRA
 .DESCRIPTION
     Uses the PasteBin API to take content from a file and create a new paste from it, including expiration, format, visibility, and title.
 .PARAMETER InputObject
@@ -106,23 +107,19 @@ Function Out-Pastebin
             api_paste_expire_date = $ExpiresIn.ToUpper();
         }
        
-        If ( $Format ) { $Parameters[ 'api_paste_format' ] = $Format.ToLower() }
-       
+        If ( $Format ) { $Parameters[ 'api_paste_format' ] = $Format.ToLower() }      
         $Content = EncodeForPost $Parameters
         $Post.ContentLength = [System.Text.Encoding]::ASCII.GetByteCount( $Content )
         $WriteStream = New-Object System.IO.StreamWriter ( $Post.GetRequestStream( ), [System.Text.Encoding]::ASCII )
         $WriteStream.Write( $Content )
-        $WriteStream.Close( )
-       
+        $WriteStream.Close( )      
         # Send request, get response
         $Response = $Post.GetResponse( )
         $ReadEncoding = [System.Text.Encoding]::GetEncoding( $Response.CharacterSet )
-        $ReadStream = New-Object System.IO.StreamReader ( $Response.GetResponseStream( ), $ReadEncoding )
-       
+        $ReadStream = New-Object System.IO.StreamReader ( $Response.GetResponseStream( ), $ReadEncoding )     
         $Result = $ReadStream.ReadToEnd().TrimEnd( )  
         $ReadStream.Close( )
-        $Response.Close( )
-       
+        $Response.Close( )   
         If ( $Result.StartsWith( "http" ) ) {
             If ( $OpenInBrowser ) {
                 Try { Start-Process -FilePath $Result } Catch { }
