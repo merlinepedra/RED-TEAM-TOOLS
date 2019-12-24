@@ -16,9 +16,9 @@
 .PARAMETER OpenInBrowser
     Open the paste URL in the default browser
 .EXAMPLE
-	Out-Pastebin -InputObject $(Get-Content C:\Users\Marco\Desktop\to_be_uploaded.txt) -PasteTitle "TOP" -ExpiresIn 10M -Visibility Private
+	Out-Pastebin -InputObject $(Get-Content C:\Users\xxxx\Desktop\to_be_uploaded.txt) -PasteTitle "TOP" -ExpiresIn 10M -Visibility Private
 .EXAMPLE
-	$list = (Get-Content C:\Users\Marco\Desktop\to_be_uploaded.txt)
+	$list = (Get-Content C:\Users\xxxxx\Desktop\to_be_uploaded.txt)
 	Out-Pastebin -InputObject $list -PasteTitle "TOP" -ExpiresIn 10M -Visibility Private
 #>
 
