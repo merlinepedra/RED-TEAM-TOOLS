@@ -1,3 +1,27 @@
+<#
+.DESCRIPTION
+   ReverseTCP Shell - Framework. This PS1 starts a listener Server on a Windows attacker machine and generate oneline rev shell payloads for CMD and PS to be executed on the victim machine.
+.EXAMPLE
+   run Reverse_TCP_Shell_SRV.ps1
+   follow the instructions setting:
+   - Local Host: 172.16.217.130
+   - Local Port: 443
+    [*] Obfuscation Type: [*]
+
+ 1 = ASCII
+ 2 = BXOR
+ 3 = Base64
+
+ >>> 2
+ 
+ execute the output on the victim machine.
+ 
+ more info here: 
+ https://github.com/ZHacker13/ReverseTCPShell
+ https://www.youtube.com/watch?v=hiYyXv4RdD8
+ 
+#>
+
 function Character_Obfuscation($String)
 {
   $String = $String.toCharArray();
