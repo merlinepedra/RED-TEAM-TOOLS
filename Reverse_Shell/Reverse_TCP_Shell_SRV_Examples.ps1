@@ -2,6 +2,9 @@
  - Local host: 172.16.217.130
  - Local Port: 443
  
+ for the Powershell execution you can add: 
+ powershell.exe -ExecutionPolicy Bypass -Windowstyle Hidden -Command "command here"
+ 
  [*] Obfuscation Type: [*]
  1 = ASCII
  
