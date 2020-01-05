@@ -1,6 +1,7 @@
 <#
 .DESCRIPTION
    ReverseTCP Shell - Framework. This PS1 starts a listener Server on a Windows attacker machine and generate oneline rev shell payloads for CMD and PS to be executed on the victim machine.
+   You can use the generated oneline rev shell payload also via netcat on linux. (in this case you will lose the C2 functionalities like screenshot, upload and download files. 
 .EXAMPLE
    run Reverse_TCP_Shell_SRV.ps1
    follow the instructions setting:
