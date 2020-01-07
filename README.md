@@ -9,12 +9,19 @@ T1193 - Spearphishing Attachment - https://attack.mitre.org/techniques/T1193/
 
 Execution:
 T1047 - Windows Management Instrumentation - https://attack.mitre.org/techniques/T1047/
+
 T1059 - Command-Line Interface - https://attack.mitre.org/techniques/T1059/
+
 T1061 - Graphical User Interface - https://attack.mitre.org/techniques/T1061/
+
 T1064 - Scripting https://attack.mitre.org/techniques/T1064/
+
 T1085 - Rundll32 - https://attack.mitre.org/techniques/T1085/
+
 T1086 - PowerShell - https://attack.mitre.org/techniques/T1086/
+
 T1127 - Trusted Developer Utilities - https://attack.mitre.org/techniques/T1127/
+
 T1170 - Mshta (TBD) - https://attack.mitre.org/techniques/T1170/
 
 Persistence:
