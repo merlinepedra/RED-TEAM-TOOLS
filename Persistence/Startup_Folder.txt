@@ -1,0 +1,1 @@
+copy C:\Windows\Temp\RECON.bat "C:\Users\Marco\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\RECON.bat" 
