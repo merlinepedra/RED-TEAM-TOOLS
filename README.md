@@ -3,11 +3,13 @@ Some scripts useful for red team activities
 
 Covered MITRE ATT&CK Tactics & Techniques (https://attack.mitre.org/):
 
+
 Initial Access:
 
 T1192 - Spearphishing Link - https://attack.mitre.org/techniques/T1192/
 
 T1193 - Spearphishing Attachment - https://attack.mitre.org/techniques/T1193/
+
 
 Execution:
 
@@ -27,9 +29,11 @@ T1127 - Trusted Developer Utilities - https://attack.mitre.org/techniques/T1127/
 
 T1170 - Mshta (TBD) - https://attack.mitre.org/techniques/T1170/
 
+
 Persistence:
 
 T1060 - Registry Run Keys / Startup Folder - https://attack.mitre.org/techniques/T1060/
+
 
 Defense Evasion:
 
@@ -41,6 +45,7 @@ T1140 - Deobfuscate/Decode Files or Information - https://attack.mitre.org/techn
 
 T1143 - Hidden Window - https://attack.mitre.org/techniques/T1143/
 
+
 Credential Access:
 
 T1003 - Credential Dumping - https://attack.mitre.org/techniques/T1003/
@@ -50,6 +55,7 @@ T1081 - Credentials in Files - https://attack.mitre.org/techniques/T1081/
 T1214 - Credentials in Registry (TBD) - https://attack.mitre.org/techniques/T1214/
 
 T1503 - Credentials from Web Browsers - https://attack.mitre.org/techniques/T1503/
+
 
 Discovery:
 
@@ -85,6 +91,7 @@ T1201 - Password Policy Discovery - https://attack.mitre.org/techniques/T1201/
 
 T1518 - Software Discovery - https://attack.mitre.org/techniques/T1518/
 
+
 Collection:
 
 T1005 - Data from Local System - https://attack.mitre.org/techniques/T1005/
@@ -100,6 +107,7 @@ T1119 - Automated Collection - https://attack.mitre.org/techniques/T1119/
 T1123 - Audio Capture - https://attack.mitre.org/techniques/T1123/
 
 T1125 - Video Capture (TBD) - https://attack.mitre.org/techniques/T1125/
+
 
 Command and Control & Exfiltration:
 
